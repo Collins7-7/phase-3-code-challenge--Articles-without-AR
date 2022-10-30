@@ -1,3 +1,5 @@
+require_relative "./article.rb"
+
 class Magazine
   attr_writer :name, :category
 
@@ -19,6 +21,20 @@ class Magazine
 
   def self.all
     @@all
+  end
+
+  def contributors
+    Article.all.map do |article|
+      if article.magazine.name = self.name
+        article.author
+      end
+    end
+  end
+
+  def self.find_by_name(name)
+    self.all.find do |mag|
+      mag.name = name
+    end
   end
 
 
