@@ -28,7 +28,7 @@ class Magazine
 
   def contributors
     Article.all.map do |article|
-      if article.magazine.name = self.name
+      if article.magazine.name == self.name
         article.author
       end
     end
@@ -46,7 +46,7 @@ class Magazine
 
   def article_titles
     Article.all.map do |article|
-      if article.magazine.name = self.name
+      if article.magazine.name == self.name
         article.title
       end
     end

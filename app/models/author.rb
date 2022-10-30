@@ -44,7 +44,7 @@ class Author
 
   def topic_areas
     @topics = Article.all.map do |article|
-      if article.author.name = self.name
+      if article.author.name == self.name
         article.magazine.category
       end
     end
