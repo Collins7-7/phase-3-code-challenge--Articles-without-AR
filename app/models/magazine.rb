@@ -23,6 +23,8 @@ class Magazine
     @@all
   end
 
+#Returns an array of Author instances who have written for this magazine
+
   def contributors
     Article.all.map do |article|
       if article.magazine.name = self.name
@@ -31,10 +33,18 @@ class Magazine
     end
   end
 
+  #Given a string of magazine's name, this method returns the first magazine object that matches
+
   def self.find_by_name(name)
     self.all.find do |mag|
       mag.name = name
     end
+  end
+
+  #Returns an array strings of the titles of all articles written for that magazine
+
+  def article_titles
+
   end
 
 
