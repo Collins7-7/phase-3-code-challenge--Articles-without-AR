@@ -7,8 +7,15 @@ end
 
 ###  WRITE YOUR TEST CODE HERE ###
 
+magazine1 = Magazine.new("mens health", "fitness")
+magazine2 = Magazine.new("Forbes", "wealth")
+magazine3 = Magazine.new("Seas", "nature")
 
+collomani = Author.new("Collo")
+muiruri = Author.new("Muiruri")
 
+article1 = Article.new(collomani, magazine1,"article1")
+article2 = Article.new(muiruri, magazine2, "article2")
 
 
 

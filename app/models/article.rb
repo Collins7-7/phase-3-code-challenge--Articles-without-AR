@@ -10,7 +10,7 @@ attr_reader :author, :magazine, :title
     end
 
     def title
-        self.title
+        @title
     end
 
     def self.all
@@ -18,10 +18,10 @@ attr_reader :author, :magazine, :title
     end
 
     def author
-        self.author
+        @author
     end
 
     def magazine
-        self.magazine
+        @magazine
     end
 end
