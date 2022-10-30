@@ -16,7 +16,9 @@ class Author
 
   def articles
     Article.all.map do |article|
-      article.author.name == self.name
+      if article.author.name == self.name
+        article
+      end
     end
   end
 

@@ -10,6 +10,7 @@ end
 magazine1 = Magazine.new("mens health", "fitness")
 magazine2 = Magazine.new("Forbes", "wealth")
 magazine3 = Magazine.new("Seas", "nature")
+magazine4 = Magazine.new("motor", "cars")
 
 collomani = Author.new("Collo")
 muiruri = Author.new("Muiruri")
