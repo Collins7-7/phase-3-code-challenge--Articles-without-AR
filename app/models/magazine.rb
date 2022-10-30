@@ -53,7 +53,10 @@ class Magazine
   end
 #Returns an array of authors who have written more than 2 articles for the magazine
   def contributing_authors
-    self.contributors.filter {|author| author.articles.length > 2}
+    # self.contributors.filter {|author| author.articles.length > 2}
+    if self.contributors.length > 2
+      self.contributors
+    end
   end
 
 
