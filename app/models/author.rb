@@ -1,7 +1,7 @@
 require_relative "./article.rb"
 
 class Author
-  attr_accessor :name
+  attr_reader :name
 
 
   def initialize(name)
@@ -15,22 +15,20 @@ class Author
 # Returns an array of Article instances the author has written
 
   def articles
-    Article.all.map do |article|
-      if article.author.name == self.name
-        article
-      end
+    Article.all.filter do |article|
+      article.author.name == self.name
     end
   end
 
 #Returns a **unique** array of Magazine instances for which the author has contributed to
 
   def magazines
-    @magazines= Article.all.map do |article|
-      if article.author.name == self.name
-        article.magazine
-      end
+    @magazines = Article.all.filter do |article|
+      article.author.name == self.name
+    end.map do |filtered_magazine|
+      filtered_magazine.magazine
     end
-      @magazines.uniq
+    @magazines.uniq
   end
 
   #Given a magazine (as Magazine instance) and a title (as a string), 
@@ -45,11 +43,11 @@ class Author
   #of the magazines the author has contributed to
 
   def topic_areas
-    @topics = Article.all.map do |article|
-      if article.author.name == self.name
-        article.magazine.category
+    @topics = Article.all.filter do |article|
+      article.author.name == self.name
+      end.map do |new_article|
+        new_article.magazine.category
       end
-    end
     @topics.uniq
   end
   
